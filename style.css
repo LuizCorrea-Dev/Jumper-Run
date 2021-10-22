@@ -1,0 +1,181 @@
+*{
+	padding:0;
+	margin:0;
+	overflow-x: hidden;
+	overflow: hidden;	
+}
+@font-face {
+  font-family: Gamer;
+  src: url('Gamer.ttf') format('opentype');
+}
+
+body{	background-image:url("fundo.jpg");}
+.game{
+	padding-top: 100px;
+	width: 700px;
+	height:350px;
+	border: 5px solid white;
+	margin: auto;
+  background-image:url("cidade.gif");
+}
+
+/* ---- personagem -----*/
+#character{
+	width: 130px;
+	height: 92px;
+	position: relative;
+	top: 150px;
+	border-radius: 10px;
+
+}
+#character img{
+	height: 100px;	
+	overflow: hidden;
+	position: absolute;
+	left: 0px;
+	top: 0px;
+}.animate{
+	animation: jump 3000ms linear;
+}@keyframes jump{
+	0%{top: 150px;}
+	5%{top: 30px;}
+	92%{top: 70px;}
+	100%{top: 150px;}
+}
+
+/* ---- fireball -----*/
+#fireball{
+	width: 100px;
+	height: 50px;
+	background-image:url("fireball.gif");
+	position: relative;
+	top: 240px;
+	left: 131px;
+ animation: fireball 1.5s infinite linear; 
+}	#fireball img{
+		width: 100px;
+		position: absolute;
+		top: -20px;
+}@keyframes fireball{
+	0%{left: 100%;}
+	100%{left: -20px;}
+}
+
+/* ---- textos -----*/
+.barTexts {
+	position: absolute;
+	z-index: 5;
+	margin-top: -90px;
+	margin-left: 10px;
+	max-width: 680px;
+	width: 100%;
+	display: inline;
+}
+
+.score{
+	min-width: 200px;
+	width: 50%;
+	font-family: Gamer;
+	padding: 0;
+	font-size: xx-large;
+	text-align:center;
+	float:left;
+	color: rgb(170, 167, 167);
+}
+.record{
+	min-width: 200px;
+	width: 50%;
+	font-family: Gamer;
+	padding: 0;
+	font-size: xx-large;
+	text-align:center;
+	float:right;
+	color: rgb(170, 167, 167);
+}
+
+
+span{
+	padding-left: 10px;
+	color: yellow;
+}
+
+/* ---- heart -----*/
+.heartBar {
+	z-index: 5;
+	padding-right: 30px;
+	padding-top: 20px;
+	margin: 5px;
+	text-align: center;
+}
+
+
+.heart {
+	z-index: 6;
+	width: 30px;
+  height: 30px;
+	margin: 2px;
+  background-image: url(heart.png);
+	float:right;
+}
+
+/**---------modal-------------*/
+.modal {
+	position: fixed;
+	font-family: Gamer;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background: rgba(0,0,0,0.9);
+	z-index: 10;
+	opacity:0;
+	-webkit-transition: opacity 400ms ease-in;
+	-moz-transition: opacity 400ms ease-in;
+	transition: opacity 400ms ease-in;
+	pointer-events: none;
+}
+.modal:target {
+	opacity: 1;
+	pointer-events: auto;
+}
+.fechar {
+	z-index: 11;
+	background: #1f1f1f;
+	color: #FFFFFF;
+	line-height: 25px;
+	position: absolute;
+	right: 10px;
+	text-align: center;
+	top: 10px;
+	width: 24px;
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+	font-size: large;
+	text-decoration: none;
+	font-weight: bold;
+	-webkit-border-radius: 12px;
+	-moz-border-radius: 12px;
+	border-radius: 12px;
+	-moz-box-shadow: 1px 1px 3px #000;
+	-webkit-box-shadow: 1px 1px 3px #000;
+	box-shadow: 1px 1px 3px #000;
+}
+.fechar:hover { background: red;}
+
+.modal > div {
+	width: 70%;
+	position: relative;
+	margin: 10% auto;
+	padding: 5px 20px 13px 20px;
+	border-radius: 10px;
+	background: rgba(135, 135, 135, 0.5);
+}
+
+.modal h1 {
+	font-family: Gamer;
+	padding: 20%;
+	font-size:100px;
+	text-align:center;
+	color: whitesmoke;
+}.modal h1:hover {	color: red;}
+
+
